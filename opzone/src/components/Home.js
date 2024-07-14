@@ -26,7 +26,7 @@ function Home() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/activedoctor');
+        const response = await axios.get('https://opzone-backend.onrender.com/activedoctor');
         setAllDoctors(response.data.doctorfilter);
       } catch (error) {
         console.error("Error fetching doctors:", error);
@@ -35,7 +35,7 @@ function Home() {
 
     const fetchschedule = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/activeschedule');
+        const response = await axios.get('https://opzone-backend.onrender.com/activeschedule');
         setactivedoctor(response.data.schedulefilter);
       } catch (error) {
         console.error("Error fetching doctors:", error);
