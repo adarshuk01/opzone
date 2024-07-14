@@ -5,14 +5,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Usernavbar() {
+const navigate=useNavigate()
+  
   const userid= localStorage.getItem('userId')
   const logoutfunc=()=>{
     localStorage.removeItem('userId');
     localStorage.removeItem('bookedDoctorId');
     localStorage.removeItem('token');
+    navigate('/login')
   }
 
   return (
