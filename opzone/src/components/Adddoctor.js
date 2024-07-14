@@ -11,7 +11,7 @@ import axios from 'axios';
 
 function Adddoctor() {
   const dispatch = useDispatch();
-  const { opstaff, status, error } = useSelector((state) => state.opstaff);
+  const { opstaff, status } = useSelector((state) => state.opstaff);
 
   console.log(opstaff);
 
@@ -29,8 +29,8 @@ function Adddoctor() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [hospitalid,sethospitalid]=useState('')
-  const navigate = useNavigate();
+  // const [hospitalid,sethospitalid]=useState('')
+  // const navigate = useNavigate();
 
   const handlePhoto = (e) => {
     setPhoto(e.target.files[0]);
