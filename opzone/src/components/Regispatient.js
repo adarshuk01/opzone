@@ -150,7 +150,7 @@ function Regispatient() {
     </div>
     <Button variant='success' type="submit">Register</Button>
     <div className='mt-2'>
-        <p className='p-0 m-0'>Already Registered?<a href="/login">Login</a></p>
+        <p className='p-0 m-0'>Already Registered?<a href="https://opzone-frontend.onrender.com/login">Login</a></p>
         <p className='p-0 m-0'>Employee?<a href="/admin">Login</a></p>
     </div>
 </Form>
