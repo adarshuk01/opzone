@@ -34,7 +34,9 @@ function Usernavbar() {
           </Nav>
           <Form className="d-flex gap-2">
           {userid ? (
+             <Link to="https://opzone-frontend.onrender.com/login">
           <Button onClick={logoutfunc} variant="success">Logout</Button>
+             </Link> 
         ) : (
           <Link to="https://opzone-frontend.onrender.com/register">
             <Button variant="success">Register/Login</Button>
