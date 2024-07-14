@@ -26,7 +26,7 @@ function Regispatient() {
     const body = { fullname, email, dateofbirth, gender, phoneno, address, place, city, username, password };
     console.log(gender);
     try {
-        const res = await axios.post('http://localhost:8000/patientreg', body);
+        const res = await axios.post('https://opzone-backend.onrender.com/patientreg', body);
         if (res.data.status === "user already exists") {
             alert("User already exists");
         } else {
