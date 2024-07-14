@@ -17,7 +17,7 @@ function Appointments() {
 
   const fetchbookings = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/bookappointment/${doctorid}`);
+      const response = await axios.get(`https://opzone-backend.onrender.com/${doctorid}`);
       console.log(response.data);
       setbookingdata(response.data);
     } catch (error) {
