@@ -27,8 +27,8 @@ function App() {
           <Route path='/addopstaff' element={<Opstaff />} ></Route>
           <Route path='/doctorpage' element={<Doctorpage />} ></Route>
           <Route path='/' element={<Home />} ></Route>
-          <Route path='https://opzone-backend.onrender.com/register' element={<Regispatient />} ></Route>
-          <Route path='/login' element={<Userlogin />} ></Route>
+          <Route path='https://opzone-frontend.onrender.com/register' element={<Regispatient />} ></Route>
+          <Route path='https://opzone-frontend.onrender.com/login' element={<Userlogin />} ></Route>
           <Route path='/bookop' element={<BookOp />} ></Route>
           <Route path='/opstaffhome' element={<OpstaffHome />} ></Route>
           <Route path='/doctorappointments' element={<Appointments />} ></Route>
