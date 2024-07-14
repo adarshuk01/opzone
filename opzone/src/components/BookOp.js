@@ -44,7 +44,7 @@ function BookOp() {
         };
 
         try {
-            const response = await axios.post('http://localhost:8000/bookappointment', body);
+            const response = await axios.post('https://opzone-backend.onrender.com/bookappointment', body);
             alert('Appointment booked successfully');
             
             setConfirmation(response.data);
@@ -59,7 +59,7 @@ function BookOp() {
 
     const fetchBookings = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/bookappointment/${patientid}/${doctorid}`);
+            const response = await axios.get(`https://opzone-backend.onrender.com/bookappointment/${patientid}/${doctorid}`);
             setBookingData(response.data);
         } catch (error) {
             console.error('Error fetching bookings:', error);
@@ -69,7 +69,7 @@ function BookOp() {
     useEffect(() => {
         const fetchDoctors = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/getdoctor/${doctorid}`);
+                const response = await axios.get(`https://opzone-backend.onrender.com/getdoctor/${doctorid}`);
                 setDoctorData(response.data[0]);
             } catch (error) {
                 console.error('Error fetching doctor details:', error);
@@ -78,7 +78,7 @@ function BookOp() {
 
         const fetchSchedule = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/schedule/${doctorid}`);
+                const response = await axios.get(`https://opzone-backend.onrender.com/schedule/${doctorid}`);
                 const activeSchedules = response.data.filter(schedule => schedule.scheduleStatus === 'active');
                 setScheduleData(activeSchedules[0]);
             } catch (error) {
