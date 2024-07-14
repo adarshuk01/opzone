@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 function Adminnavbar() {
   return (
@@ -20,8 +21,11 @@ function Adminnavbar() {
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Users" id="navbarScrollingDropdown">
-              <NavDropdown.Item className='d-flex align-items-center gap-2' href="/adddoctor"><span class="material-symbols-outlined">stethoscope_arrow</span>Add Doctors
-              </NavDropdown.Item>
+              <NavDropdown.Item className='d-flex align-items-center gap-2'>
+  <Link to="/adddoctor"> <span className="material-symbols-outlined">stethoscope_arrow</span>
+  Add Doctors</Link>
+ 
+</NavDropdown.Item>
               <NavDropdown.Item className='d-flex align-items-center gap-2' href="/addopstaff">
               <span class="material-symbols-outlined">moving_ministry</span> Add Hospital
               </NavDropdown.Item>
