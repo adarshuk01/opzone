@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useCallback } from 'react';
 import Usernavbar from './Usernavbar';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
@@ -15,15 +15,15 @@ function Appointments() {
   const doctorname = localStorage.getItem('DoctorName');
   const specialization = localStorage.getItem('Specialization');
 
-  const fetchbookings = async () => {
+  const fetchbookings = useCallback(async () => {
     try {
-      const response = await axios.get(`https://opzone-backend.onrender.com/${doctorid}`);
+      const response = await axios.get(`https://opzone-backend.onrender.com/bookappointment/${doctorid}`);
       console.log(response.data);
       setbookingdata(response.data);
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [doctorid]); 
 
   const handleFilter = (e) => {
     e.preventDefault(); // Prevents the default form submission behavior
@@ -43,9 +43,9 @@ function Appointments() {
     window.location.reload(); // To restore the original page state
   };
 
-  useEffect(() => {
+ useEffect(() => {
     fetchbookings();
-  }, []);
+  }, [fetchbookings]);
 
   return (
     <div>
