@@ -101,7 +101,7 @@ function Doctorpage() {
   const fetchSchedule = useCallback(async () => {
     if (!doctorid) return;
     try {
-      const response = await axios.get(`http://localhost:8000/schedule/${doctorid}`);
+      const response = await axios.get(`https://opzone-backend.onrender.com/schedule/${doctorid}`);
       console.log('Schedule fetched:', response.data);
       setSchedule(response.data);
       setFetchError(null);
@@ -114,7 +114,7 @@ function Doctorpage() {
   const handleConfirm = useCallback(async () => {
     const body = { doctorid, selectedDays, startTime, endTime, currentDateTime };
     try {
-      const response = await axios.post(`http://localhost:8000/schedule/${doctorid}`, body);
+      const response = await axios.post(`https://opzone-backend.onrender.com/schedule/${doctorid}`, body);
       console.log('Server response:', response.data);
       fetchSchedule();
     } catch (error) {
@@ -126,13 +126,13 @@ function Doctorpage() {
   const handleStatus = useCallback(async (itemId) => {
     try {
       const newStatus = activeScheduleId === itemId ? "inactive" : "active";
-      const response = await axios.post(`http://localhost:8000/activateschedule/${itemId}`, { scheduleStatus: newStatus, doctorid });
+      const response = await axios.post(`https://opzone-backend.onrender.com/activateschedule/${itemId}`, { scheduleStatus: newStatus, doctorid });
       console.log('Updated status:', response.data);
       fetchSchedule();
       setActiveScheduleId(newStatus === 'active' ? itemId : null);
       const inactiveSchedules = schedule.filter(item => item._id !== itemId);
       for (const scheduleItem of inactiveSchedules) {
-        await axios.post(`http://localhost:8000/activateschedule/${scheduleItem._id}`, { scheduleStatus: 'inactive', doctorid });
+        await axios.post(`https://opzone-backend.onrender.com/activateschedule/${scheduleItem._id}`, { scheduleStatus: 'inactive', doctorid });
       }
       fetchSchedule();
     } catch (error) {
@@ -147,7 +147,7 @@ function Doctorpage() {
   const doctorID = localStorage.getItem('userId');
   const fetchBookings = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/bookappointment/${doctorID}`);
+      const response = await axios.get(`https://opzone-backend.onrender.com/bookappointment/${doctorID}`);
       setBookingData(response.data);
     } catch (error) {
       console.error('Error fetching bookings:', error);
@@ -157,7 +157,7 @@ function Doctorpage() {
   const addPrescription = async (e, appointmentId) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:8000/bookings/${appointmentId}`, {
+      const response = await axios.put(`https://opzone-backend.onrender.com/bookings/${appointmentId}`, {
         prescription: prescription[appointmentId]
       });
       console.log('Updated booking:', response.data);
