@@ -24,7 +24,7 @@ mongoose.connect(mongoUri, {
   useUnifiedTopology: true,
   ssl: true, // Enable SSL connection
   sslValidate: true, // Validate server certificate
-  sslCA: yourSSLCAFileOrBuffer, // CA certificate to validate against
+  
 })
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
