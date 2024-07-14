@@ -4,6 +4,7 @@ import { Button, FloatingLabel, Form } from 'react-bootstrap'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
+ import { Link } from 'react-router-dom';
 
 function Regispatient() {
 
@@ -17,7 +18,7 @@ function Regispatient() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    import { Link } from 'react-router-dom';
+   
     const navigate=useNavigate()
 
    // Function to handle form submission
