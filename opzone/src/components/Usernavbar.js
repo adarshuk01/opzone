@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, useHistory } from 'react-router-dom';
+
 
 function Usernavbar() {
   const userid= localStorage.getItem('userId')
@@ -32,7 +34,7 @@ function Usernavbar() {
           </Nav>
           <Form className="d-flex gap-2">
           {userid ? (
-          <Button onClick={handleLogout} variant="success">Logout</Button>
+          <Button onClick={logoutfunc} variant="success">Logout</Button>
         ) : (
           <Link to="https://opzone-frontend.onrender.com/register">
             <Button variant="success">Register/Login</Button>
