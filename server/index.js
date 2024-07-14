@@ -17,7 +17,17 @@ const { ObjectId } = require('bson');
 const { log } = require('console');
 
 
-mongoose.connect('mongodb+srv://adarshukumar90:<password>@cluster0.fkgo0yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+const mongoUri = 'mongodb+srv://adarshukumar90:<password>@cluster0.fkgo0yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(mongoUri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  ssl: true, // Enable SSL connection
+  sslValidate: true, // Validate server certificate
+  sslCA: yourSSLCAFileOrBuffer, // CA certificate to validate against
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 server.use(cors({
     origin: "https://opzone-frontend.onrender.com"
