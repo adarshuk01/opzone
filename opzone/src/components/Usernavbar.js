@@ -31,8 +31,13 @@ function Usernavbar() {
             </Nav.Link>
           </Nav>
           <Form className="d-flex gap-2">
-          <Button className={`${userid?"d-none":" "}`} href='https://opzone-frontend.onrender.com/register' variant="success">{userid?userid:"Register/Login"}</Button>: 
-          <Button onClick={logoutfunc} className={`${userid?"logout":"d-none"}`} href='/login' variant="success">{userid?"logout":""}</Button>   
+          {userid ? (
+          <Button onClick={handleLogout} variant="success">Logout</Button>
+        ) : (
+          <Link to="https://opzone-frontend.onrender.com/register">
+            <Button variant="success">Register/Login</Button>
+          </Link>
+        )} 
           
           </Form>
         </Navbar.Collapse>
