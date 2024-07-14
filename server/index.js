@@ -17,10 +17,10 @@ const { ObjectId } = require('bson');
 const { log } = require('console');
 
 
-mongoose.connect('mongodb://localhost:27017/opzone');
+mongoose.connect('mongodb+srv://adarshukumar90:<password>@cluster0.fkgo0yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 server.use(cors({
-    origin: "http://localhost:3000"
+    origin: "https://opzone-frontend.onrender.com"
 }));
 
 server.use(express.json());
