@@ -22,7 +22,7 @@ useEffect(() => {
     const fetchdoctordel = async () => {
       if (currentOpStaff && currentOpStaff.hospitalname) {
         try {
-          const response = await axios.get(`http://localhost:8000/getdoctorhospital/${currentOpStaff.hospitalname},${currentOpStaff.city}`);
+          const response = await axios.get(`https://opzone-backend.onrender.com/getdoctorhospital/${currentOpStaff.hospitalname},${currentOpStaff.city}`);
           console.log(response.data);
           setdoctorsdel(response.data)
         } catch (error) {
