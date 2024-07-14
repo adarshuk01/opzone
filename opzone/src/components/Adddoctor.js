@@ -59,7 +59,7 @@ function Adddoctor() {
     formData.append('exp', exp);
 
     try {
-      const res = await axios.post('http://localhost:8000/doctordetails', formData, {
+      const res = await axios.post('https://opzone-backend.onrender.com/doctordetails', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
