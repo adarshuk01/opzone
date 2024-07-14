@@ -51,7 +51,7 @@ function Opstaff() {
         formData.append('username', username);
         formData.append('password', password);
 
-        axios.post('http://localhost:8000/hospitaldetails', formData, {
+        axios.post('https://opzone-backend.onrender.com/hospitaldetails', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
