@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Define the async thunk
 export const fetchopstaff = createAsyncThunk('projects/fetchopstaff', async () => {
-  const response = await axios.get('http://localhost:8000/gethospital');
+  const response = await axios.get('https://opzone-backend.onrender.com/gethospital');
   return response.data; // Ensure this matches the structure you expect
 });
 
