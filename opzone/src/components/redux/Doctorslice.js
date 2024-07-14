@@ -5,7 +5,7 @@ import axios from 'axios';
 export const fetchDoctor = createAsyncThunk('doctor/fetchDoctor', async () => {
   const superId = localStorage.getItem('userId'); // Fetch inside the thunk
   try {
-    const response = await axios.get(`http://localhost:8000/getdoctor/${superId}`);
+    const response = await axios.get(`https://opzone-backend.onrender.com/getdoctor/${superId}`);
     return response.data; // Ensure this matches the structure you expect
   } catch (error) {
     throw Error('Failed to fetch doctors');
