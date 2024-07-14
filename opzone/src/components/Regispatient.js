@@ -17,6 +17,7 @@ function Regispatient() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    import { Link } from 'react-router-dom';
     const navigate=useNavigate()
 
    // Function to handle form submission
@@ -150,7 +151,7 @@ function Regispatient() {
     </div>
     <Button variant='success' type="submit">Register</Button>
     <div className='mt-2'>
-        <p className='p-0 m-0'>Already Registered?<a href="https://opzone-frontend.onrender.com/login">Login</a></p>
+        <p className='p-0 m-0'>Already Registered? <Link to="/login">Login</Link></p>
         <p className='p-0 m-0'>Employee?<a href="/admin">Login</a></p>
     </div>
 </Form>
