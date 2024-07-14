@@ -17,7 +17,7 @@ const { ObjectId } = require('bson');
 const { log } = require('console');
 
 
-const mongoUri = 'mongodb+srv://adarshukumar90:YrzHhgMFS58VGMxJ@cluster0.fkgo0yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoUri = 'mongodb+srv://adarshukumar90:YrzHhgMFS58VGMxJ@cluster0.fkgo0yi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/opzone';
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
